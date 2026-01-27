@@ -5,7 +5,8 @@ import Footer from './components/Footer'
 import { db } from './data/guitarras'
 
 function App() {
-  // Estado inicial del carrito buscando en LocalStorage
+
+
   const initialCart = () => {
     const localStorageCart = localStorage.getItem('carrito')
     return localStorageCart ? JSON.parse(localStorageCart) : []
@@ -13,8 +14,9 @@ function App() {
 
   const [data] = useState(db)
   const [cart, setCart] = useState(initialCart)
+  
 
-  // Guardar en LocalStorage cada que el carrito cambie
+
   useEffect(() => {
     localStorage.setItem('carrito', JSON.stringify(cart))
   }, [cart])
@@ -33,7 +35,7 @@ function App() {
 
   return (
     <>
-      <Header 
+      <Header
         cart={cart}
         setCart={setCart}
       />

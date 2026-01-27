@@ -1,6 +1,7 @@
 export default function Guitarra({ guitar, addToCart }) {
   const { nombre, imagen, descripcion, precio } = guitar
 
+
   return (
     <div className="col-md-6 col-lg-4 my-4 row align-items-center">
       <div className="col-4">
@@ -19,3 +20,5 @@ export default function Guitarra({ guitar, addToCart }) {
     </div>
   )
 }
+
+

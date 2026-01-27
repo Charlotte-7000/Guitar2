@@ -15,7 +15,6 @@ export default function Header({ cart, setCart }) {
                             <img className="img-fluid" src="/img/logo.svg" alt="imagen logo" />
                         </a>
                     </div>
-                    {/* ... resto del código del header ... */}
                     <nav className="col-md-6 a mt-5 d-flex align-items-start justify-content-end">
                         <div className="carrito">
                             <img className="img-fluid" src="/img/carrito.png" alt="imagen carrito" />
@@ -24,7 +23,6 @@ export default function Header({ cart, setCart }) {
                                     <p className="text-center">El carrito está vacío</p>
                                 ) : (
                                     <p>Tienes productos en el carrito</p> 
-                                    /* Aquí puedes pegar la tabla que te pasé antes */
                                 )}
                             </div>
                         </div>
