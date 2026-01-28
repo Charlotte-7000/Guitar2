@@ -14,6 +14,23 @@ function App() {
 
   const [data] = useState(db)
   const [cart, setCart] = useState(initialCart)
+
+
+  const addGuitar = (guitar) => {
+    console.log('Agregar Guitarra al Carrito', guitar.nombre)
+    const idExist = cart.findIndex(g => g.id === guitar.id)
+    if (idExist >= -1) {
+      const newCart = [...cart]
+      newCart.push({
+        ...guitar, 
+        cantidad: 1})
+        setCart(newCart)
+    } else {
+      const newCart = [...cart]
+      newCart[idExist].cantidad ++
+      setCart(newCart)
+      }
+  }
   
 
 
@@ -48,6 +65,7 @@ function App() {
               key={guitar.id}
               guitar={guitar}
               addToCart={addToCart}
+              addGuitar={addGuitar}
             />
           ))}
         </div>
