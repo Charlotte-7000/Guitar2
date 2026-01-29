@@ -1,15 +1,5 @@
 export default function Guitarra({ guitar, addToCart }) {
-
-
-
-
   const { nombre, imagen, descripcion, precio } = guitar
-
-
-  const handleClick = () => {
-    console.log('Diste Click', guitar.nombre)
-  }
-
 
   return (
     <div className="col-md-6 col-lg-4 my-4 row align-items-center">
@@ -21,7 +11,7 @@ export default function Guitarra({ guitar, addToCart }) {
         <p>{descripcion}</p>
         <p className="fw-black text-primary fs-3">${precio}</p>
         <button 
-          onClick={() => addGuitar(guitar)}
+          onClick={() => addToCart(guitar)}
           type="button"
           className="btn btn-dark w-100"
         >Agregar al Carrito</button>
@@ -29,5 +19,3 @@ export default function Guitarra({ guitar, addToCart }) {
     </div>
   )
 }
-
-

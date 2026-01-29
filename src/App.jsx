@@ -5,8 +5,6 @@ import Footer from './components/Footer'
 import { db } from './data/guitarras'
 
 function App() {
-
-
   const initialCart = () => {
     const localStorageCart = localStorage.getItem('carrito')
     return localStorageCart ? JSON.parse(localStorageCart) : []
@@ -16,23 +14,7 @@ function App() {
   const [cart, setCart] = useState(initialCart)
 
 
-  const addGuitar = (guitar) => {
-    console.log('Agregar Guitarra al Carrito', guitar.nombre)
-    const idExist = cart.findIndex(g => g.id === guitar.id)
-    if (idExist >= -1) {
-      const newCart = [...cart]
-      newCart.push({
-        ...guitar, 
-        cantidad: 1})
-        setCart(newCart)
-    } else {
-      const newCart = [...cart]
-      newCart[idExist].cantidad ++
-      setCart(newCart)
-      }
-  }
-  
-
+  const featuredGuitar = data[3]
 
   useEffect(() => {
     localStorage.setItem('carrito', JSON.stringify(cart))
@@ -55,6 +37,8 @@ function App() {
       <Header
         cart={cart}
         setCart={setCart}
+        guitar={featuredGuitar}
+        addGuitar={addToCart}
       />
       
       <main className="container-xl mt-5">
@@ -65,7 +49,6 @@ function App() {
               key={guitar.id}
               guitar={guitar}
               addToCart={addToCart}
-              addGuitar={addGuitar}
             />
           ))}
         </div>
