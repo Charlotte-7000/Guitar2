@@ -59,4 +59,5 @@ function App() {
   )
 }
 
+//COMPONENTE PRINCIPAL
 export default App
